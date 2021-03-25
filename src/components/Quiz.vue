@@ -609,8 +609,13 @@ export default {
   padding: 23px 12px 0 12px;
   letter-spacing: -0.01em;;
   color: #202024;
+  opacity: 0;
   background: #ffffff;
   border-radius: 5px;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .step4__text-quote2{
   height: 72px;
@@ -623,6 +628,11 @@ export default {
   color: #202024;
   background: #ffffff;
   border-radius: 5px;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .step4__text::after {
   content: "";
@@ -630,6 +640,11 @@ export default {
   margin: -1px 0 0 98px;
   border: 6px solid transparent;
   border-top: 12px solid white;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .step4__title {
   text-transform: uppercase;
@@ -702,6 +717,11 @@ export default {
   background: #ffffff;
   border-radius: 5px;
   top: 20px;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .step5__text-quote--bold{
   font-weight: bold;
@@ -732,6 +752,11 @@ export default {
   margin: -1px 0 0 98px;
   border: 6px solid transparent;
   border-top: 12px solid white;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .step5__button {
   width: 238px;
@@ -1153,4 +1178,13 @@ export default {
     transform: rotate(360deg);
   }
 }
+@keyframes show{
+0%{
+opacity:0;
+}
+100% {
+opacity:1;
+}
+}
+
 </style>
