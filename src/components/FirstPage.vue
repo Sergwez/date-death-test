@@ -59,16 +59,28 @@
       <img class="fifth-screen__img-bottom" src="@/assets/fifth-img2.svg">
     </div>
     <!-- -->
-    <div class="footer">
-      <div class="footer__text">
-        TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI, 
-      </div>
+    <div class="footer" @click="changeHeightFooter()" v-bind:style="{ height: heightFooter}">
+        TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI, TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI, TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI, TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI, TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI, 
     </div>
   </div>
 </template>
 <script>
 
 export default {
+  data() {
+    return {
+      heightFooter: '2.58em'
+    }
+  },
+  methods:{
+    changeHeightFooter(){
+      if(this.heightFooter == '2.58em'){
+        this.heightFooter = 'auto'
+      } else{
+        this.heightFooter = '2.58em'
+      }
+    }
+  }
 
 
 }
@@ -93,6 +105,7 @@ export default {
   letter-spacing: 0.1em;
   padding: 15px 0 7px 0;
   border-bottom:1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 300;
 }
 .first-screen__subtitle{
   font-size: 20px;
@@ -113,7 +126,7 @@ export default {
 .first-screen__question{
   font-size: 16px;
   color:#F6C866;
-  margin: 19px 0 0 0;
+  margin: 23px 0 0 0;
   line-height: 25px;
 }
 
@@ -152,7 +165,7 @@ export default {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 300;
   line-height: 14px;
-  margin: 20px 0 0 0;
+  margin: 21px 0 0 0;
   letter-spacing: 0.1em;
 }
 .second-screen{
@@ -170,11 +183,11 @@ export default {
   z-index: 1;
 }
 .second-screen__text{
-  width:254px;
+  width:253px;
   border: 1px solid #FFFFFF;
-  margin:-38px 33px 0 33px;
+  margin:-38px 33px 0 24px;
   border-radius: 3px;
-  padding:47px 0 28px 0;
+  padding:58px 0 18px 0;
   font-size: 16px;
   line-height: 25px;
 }
@@ -197,12 +210,11 @@ export default {
   height: 331px;
   background-image: url('~@/assets/third-screen-bg.png');
   background-position: 50%;
-  opacity: 0.2;
 }
 .third-screen__text{
   width:100%;
   height:100%;
-  margin: 148px 0 0 0;
+  margin: 143px 0 0 0;
   line-height: 25px;
   font-size: 16px;
 }
@@ -214,7 +226,7 @@ export default {
 .fourth-screen__title{
   font-size: 16px;
   line-height: 19px;
-  margin: -54px 0 0 0;
+  margin: -50px 0 0 0;
   text-transform: uppercase;
   color: #F6C866;
 }
@@ -250,7 +262,7 @@ export default {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 300;
   line-height: 14px;
-  margin: 20px 0 0 0;
+  margin: 21px 0 0 0;
   letter-spacing: 0.1em;
 }
 
@@ -259,13 +271,13 @@ export default {
 }
 .fifth-screen::after{
   content:'';
-  width:100px;
+  width:40px;
   height:60px;
-  margin:-30px 0 0 -15px;
+  margin:-30px 0 0 -5px;
+  background-position: 100% 0%;
   position: absolute;
   display: block;
   background-image: url("~@/assets/fifth-img-eye2.svg");
-  opacity: 0.2;
   background-repeat: no-repeat;
 }
 .fifth-screen::before{
@@ -276,7 +288,6 @@ export default {
   position: absolute;
   display: block;
   background-image: url("~@/assets/fifth-img-eye1.svg");
-  opacity: 0.2;
   background-repeat: no-repeat;
 }
 .fifth-screen__text{
@@ -284,7 +295,6 @@ export default {
   font-size: 20px;
   line-height: 28px;
   margin:34px 0 0 0;
-  letter-spacing: 0.01em;
 }
 .fifth-screen__img-bottom{
   margin:31px 0 0 0;
@@ -292,13 +302,14 @@ export default {
 .footer{
   margin:65px 0 0 0;
 }
-.footer__text{
+.footer{
 
 font-size: 7px;
 line-height: 9px;
 letter-spacing: 3px;
 text-transform: uppercase;
 color: #9D9D9D;
+overflow: hidden;
 }
 @media (min-width:1440px) {
 .wrapper {
@@ -441,7 +452,6 @@ color: #9D9D9D;
   width:161px;
   height:190px;
   margin:15px 0 0 1260px;
-  opacity: 0.2;
   background-size: auto 190px;
   background-repeat: no-repeat;
 }
@@ -455,8 +465,10 @@ color: #9D9D9D;
   width:58px;
 }
 .footer{
-  height:50px;
-  margin: 100px 0 0 0;
+  margin: 130px 0 10px 0;
+  font-size: 14px;
+  line-height: 21px;
+
 }
 }
 @media (min-width:1920px) {
